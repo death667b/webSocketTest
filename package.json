@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/death667b/webSocketTest#readme",
   "dependencies": {
+    "http": "0.0.0",
     "websocket": "^1.0.25"
   }
 }
