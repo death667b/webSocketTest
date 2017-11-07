@@ -1,14 +1,11 @@
 <script>
     var ws = new WebSocket('ws://localhost:40510');
 
-    ws.onopen = function() {
+    ws.onopen = () => {
         console.log('WebSocket connected...');
-
         ws.send('connected');
     }
 
-    ws.onmessage = function(ev) {
-        console.log(ev);
-    }
+    ws.onmessage = ev => console.log(ev);
 
 </script>
