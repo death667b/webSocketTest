@@ -1,26 +1,21 @@
-var webSocketServer = require('websocket').server;
-var http = require('http');
+var express = require('express');
+var webSocketServer = require('ws').Server, 
+    wss = new webSocketServer({port: 40510});
 
-var server = http.createServer(function(req, res) {
-    // process response
-    console.log('Create Server Request');
-});
-server.listen(8000);
-
-wsServer = new webSocketServer({
-    httpServer: server
-});
-
-wsServer.on('request', function(request) {
-    var connection = request.accept(null, request.origin);
-
-    connection.on('message', function(message){
-        // Process message
-        console.log('I have a message: ', message);
+wss.on('connection', function(ws) {
+    ws.on('message', function(message) {
+        console.log('received %s', message);
     });
 
-    connection.on('close', function(connection) {
-        // Closing connection
-        console.log('connection closing: ', connection);
-    })
-})
+    setInterval( () => ws.send(`${new Date()}`), 1000 );
+});
+
+var app = express();
+
+app.get('/', function(req,res){
+    res.sendfile(__dirname + '/ws.html');
+});
+
+app.listen(3000, () => console.log('Listening on port 3000'));
+
+
