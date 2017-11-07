@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/death667b/webSocketTest#readme",
   "dependencies": {
-    "http": "0.0.0",
-    "websocket": "^1.0.25"
+    "express": "^4.16.2",
+    "ws": "^3.3.0"
   }
 }
