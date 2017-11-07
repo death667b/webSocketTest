@@ -13,7 +13,7 @@ wss.on('connection', function(ws) {
 var app = express();
 
 app.get('/', function(req,res){
-    res.sendfile(__dirname + '/ws.html');
+    res.sendFile(__dirname + '/ws.html');
 });
 
 app.listen(3000, () => console.log('Listening on port 3000'));
