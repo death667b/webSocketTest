@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/death667b/webSocketTest/issues"
   },
-  "homepage": "https://github.com/death667b/webSocketTest#readme"
+  "homepage": "https://github.com/death667b/webSocketTest#readme",
+  "dependencies": {
+    "websocket": "^1.0.25"
+  }
 }
